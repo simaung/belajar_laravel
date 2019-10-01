@@ -60,4 +60,17 @@ class PegawaiController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('/pegawai');
     }
+
+    public function cari(Request $request){
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari tabel pegawai sesuai pencarian data
+        $pegawai = DB::table('pegawai')
+        ->where('nama','like',"%".$cari."%")
+        ->paginate(10);
+
+        // mengirim data pegawai ke view index
+    	return view('index',['pegawai' => $pegawai]);
+    }
 }
