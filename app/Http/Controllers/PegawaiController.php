@@ -20,6 +20,21 @@ class PegawaiController extends Controller
     }
 
     public function store(Request $request){
+
+        // merubah pesan validasi
+        $messages = [
+            'required'  => ':attribute wajib diisi cuy!!!',
+            'min'       => ':attribute harus diisi minimal :min karakter ya cuy!!!',
+            'max'       => ':attribute harus diisi maksimal :max karakter ya cuy!!!',
+        ];
+
+        // form validate
+        $this->validate($request,[
+            'nama'      => 'required|min:5|max:20',
+            'jabatan'   => 'required',
+            'umur'      => 'required|numeric'
+        ],$messages); // tambahin var messages untuk merubah pesan sesuai settingan di atas
+
         // insert data ke table pegawai
         DB::table('pegawai')->insert([
             'nama'      => $request->nama,
