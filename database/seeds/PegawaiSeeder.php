@@ -19,8 +19,6 @@ class PegawaiSeeder extends Seeder
             // insert data ke tabel pegawai menggunakan Faker
             DB::table('pegawai')->insert([
                 'nama'      => $faker->name,
-                'jabatan'   => $faker->jobTitle,
-                'umur'      => $faker->numberBetween(25,40),
                 'alamat'    => $faker->address
             ]);
         }
