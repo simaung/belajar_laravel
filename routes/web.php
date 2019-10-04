@@ -37,3 +37,5 @@ Route::get('/guru/kembalikan/{id}', 'GuruController@kembalikan');
 Route::get('/guru/kembalikan_semua', 'GuruController@kembalikan_semua');
 Route::get('/guru/hapus_permanen/{id}', 'GuruController@hapus_permanen');
 Route::get('/guru/hapus_permanen_semua', 'GuruController@hapus_permanen_semua');
+
+Route::get('/pengguna', 'PenggunaController@index');
