@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\UtilController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -46,3 +48,7 @@ Route::get('/anggota', 'AnggotaController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/enkripsi', 'UtilController@enkripsi');
+Route::get('/data', 'UtilController@data');
+Route::get('/data/{data_rahasia}', 'UtilController@data_proses');
