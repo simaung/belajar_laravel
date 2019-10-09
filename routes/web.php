@@ -54,3 +54,6 @@ Route::get('/data', 'UtilController@data');
 Route::get('/data/{data_rahasia}', 'UtilController@data_proses');
 
 Route::get('/hash', 'UtilController@hash');
+
+Route::get('/upload', 'UtilController@upload');
+Route::post('/upload/proses', 'UtilController@proses_upload');
