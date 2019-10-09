@@ -52,3 +52,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/enkripsi', 'UtilController@enkripsi');
 Route::get('/data', 'UtilController@data');
 Route::get('/data/{data_rahasia}', 'UtilController@data_proses');
+
+Route::get('/hash', 'UtilController@hash');
