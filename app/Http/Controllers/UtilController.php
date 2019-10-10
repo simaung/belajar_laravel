@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gambar;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
@@ -70,6 +71,16 @@ class UtilController extends Controller
             'file' => $nama_file,
             'keterangan' => $request->keterangan,
         ]);
+
+        return redirect()->back();
+    }
+
+    public function hapus($id)
+    {
+        $gambar = Gambar::where('id', $id)->first();
+        File::delete('data_file/'.$gambar->file);
+
+        Gambar::where('id', $id)->delete();
 
         return redirect()->back();
     }

@@ -57,3 +57,4 @@ Route::get('/hash', 'UtilController@hash');
 
 Route::get('/upload', 'UtilController@upload');
 Route::post('/upload/proses', 'UtilController@proses_upload');
+Route::get('/upload/hapus/{id}', 'UtilController@hapus');
