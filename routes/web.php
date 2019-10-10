@@ -58,3 +58,7 @@ Route::get('/hash', 'UtilController@hash');
 Route::get('/upload', 'UtilController@upload');
 Route::post('/upload/proses', 'UtilController@proses_upload');
 Route::get('/upload/hapus/{id}', 'UtilController@hapus');
+
+Route::get('/session/tampil', 'UtilController@tampilkanSession');
+Route::get('/session/buat', 'UtilController@buatSession');
+Route::get('/session/hapus', 'UtilController@hapusSession');
