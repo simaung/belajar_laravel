@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MalasngodingEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MalasngodingController extends Controller
 {
@@ -15,5 +17,12 @@ class MalasngodingController extends Controller
 		}else{
 			return abort(404);
 		}
-    }
+	}
+	
+	public function kirimEmail()
+	{
+		Mail::to('testing@malasngoding.com')->send(new MalasngodingEmail());
+
+		return "Email telah dikirim";
+	}
 }
