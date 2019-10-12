@@ -45,7 +45,7 @@ Route::get('/pengguna', 'PenggunaController@index');
 Route::get('/article', 'WebController@index');
 
 Route::get('/anggota', 'AnggotaController@index');
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
