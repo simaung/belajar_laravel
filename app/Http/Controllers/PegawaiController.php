@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Pegawai;
 use PDF;
+use Excel;
+use App\Exports\PegawaiExport;
 
 class PegawaiController extends Controller
 {
@@ -92,4 +94,9 @@ class PegawaiController extends Controller
         // return $pdf->download('laporan-pegawai-pdf');    # untuk langsung di download
         return $pdf->stream();
     }
+
+    public function export_excel()
+	{
+		return Excel::download(new PegawaiExport, 'pegawai.xlsx');
+	}
 }

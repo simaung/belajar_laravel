@@ -15,6 +15,7 @@
                 <div class="card-body">
                     <a href="/pegawai/tambah" class="btn btn-primary">Input Pegawai Baru</a>
                     <a href="/pegawai/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                    <a href="/pegawai/export_excel" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">

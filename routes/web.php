@@ -73,3 +73,4 @@ Route::get('/malasngoding/{nama}','MalasngodingController@index');
 Route::get('/kirimemail', 'MalasngodingController@kirimEmail');
 
 Route::get('/pegawai/cetak_pdf', 'PegawaiController@cetak_pdf');
+Route::get('/pegawai/export_excel', 'PegawaiController@export_excel');
