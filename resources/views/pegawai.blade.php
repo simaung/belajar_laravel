@@ -14,6 +14,7 @@
                 </div>
                 <div class="card-body">
                     <a href="/pegawai/tambah" class="btn btn-primary">Input Pegawai Baru</a>
+                    <a href="/pegawai/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">

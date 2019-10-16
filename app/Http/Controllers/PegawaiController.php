@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Pegawai;
+use PDF;
 
 class PegawaiController extends Controller
 {
@@ -81,5 +82,14 @@ class PegawaiController extends Controller
 
         // mengirim data pegawai ke view index
     	return view('index',['pegawai' => $pegawai]);
+    }
+
+    public function cetak_pdf()
+    {
+        $pegawai = Pegawai::all();
+
+        $pdf = PDF::loadview('pegawai_pdf', ['pegawai' => $pegawai]);
+        // return $pdf->download('laporan-pegawai-pdf');    # untuk langsung di download
+        return $pdf->stream();
     }
 }

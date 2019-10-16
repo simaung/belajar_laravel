@@ -71,3 +71,5 @@ Route::get('/pesan/gagal','NotifController@gagal');
 Route::get('/malasngoding/{nama}','MalasngodingController@index');
 
 Route::get('/kirimemail', 'MalasngodingController@kirimEmail');
+
+Route::get('/pegawai/cetak_pdf', 'PegawaiController@cetak_pdf');
