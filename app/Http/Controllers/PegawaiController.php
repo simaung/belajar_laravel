@@ -8,6 +8,8 @@ use App\Pegawai;
 use PDF;
 use Excel;
 use App\Exports\PegawaiExport;
+use App\Imports\PegawaiImport;
+use Session;
 
 class PegawaiController extends Controller
 {
@@ -98,5 +100,22 @@ class PegawaiController extends Controller
     public function export_excel()
 	{
 		return Excel::download(new PegawaiExport, 'pegawai.xlsx');
-	}
+    }
+    
+    public function import_excel(Request $request)
+    {
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx',
+        ]);
+
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_pegawai', $nama_file);
+
+        Excel::import(new PegawaiImport, public_path('/file_pegawai/'.$nama_file));
+
+        Session::flash('sukses', 'Data pegawai berhasil di import');
+
+        return redirect('/pegawai');
+    }
 }
